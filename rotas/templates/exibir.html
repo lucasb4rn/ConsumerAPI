@@ -7,7 +7,13 @@
 
 <h1>Exibindo</h1>
 
-	pontoA:{{pontos.pontoA}}, pontoB:{{pontos.pontoB}},	distanciaX:{{pontos.distanciaX}}
+		<ul>
+            {% for item in lista %}
+                <li>{{item.pontoA}}, {{item.pontoB}}, {{item.distanciaX}}</li>
+            {% endfor %}
+        </ul>
+
+
 
 </body>
 </html>

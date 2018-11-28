@@ -18,15 +18,18 @@ def exibir(request):
 
 	objetos = response.json()
 
-	
+	pontosList = []
 
 	for obj in objetos:
 
-		inicial = objetos[0]['ponto_inicial']
-		final = objetos[0]['ponto_final']
-		distancia = objetos[0]['distancia']
+		inicial = obj['ponto_inicial']
+		final = obj['ponto_final']
+		distancia = obj['distancia']
 
-		ponto = Pontos(inicial, final, distancia)
+		pontos = Pontos(inicial, final, distancia)
+		
+		pontosList.append(pontos)
 
 
-	return render(request, 'exibir.html', { "pontos" : ponto })
+
+	return render(request, 'exibir.html', { "lista" : pontosList})
